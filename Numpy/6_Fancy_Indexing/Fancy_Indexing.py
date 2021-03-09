@@ -31,10 +31,33 @@ col = np.array([2, 1, 3])
 print(X[row, col])
 
 
-X1 = (X[row[:, np.newaxis], col]) # Runs column request across each row
+X1 = X[row[:, np.newaxis], col] # Runs column request across each row
 print(X1)
 
-"""
+
+X2 = row[:, np.newaxis] * col # Multiply each element of the row by each element of the column
+print(X2)
+
+# Combined indexing
 print(X[2, [2, 0, 1]]) # Access row 2, elements 2, 0 and 1
 print(X[1:, [2, 0, 1]]) # Access all rows from 1 and elements 2, 0 and 1
-"""
+
+# Combining indexing with masking
+mask = np.array([1, 0, 1, 0], dtype = bool)
+print(X[row[:, np.newaxis], mask]) # Shows all elemnts with a True (non 0) boolean
+
+
+# MODIFYING VALUES
+x = np.arange(10)
+i = np.array([2, 1, 8, 4]) # Sets elements to be changed
+x[i] = 99 # Modifies the values
+print(x)
+
+
+
+
+
+
+
+
+

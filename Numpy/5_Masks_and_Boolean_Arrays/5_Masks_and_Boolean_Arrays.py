@@ -34,7 +34,8 @@ print("Are there any values in each row less than eight?",
 print("Amount of values between 2 and 6: ", np.sum((x > 2) & (x < 6)))
 
 # Show boolean mask for all values less than 5
-print(x < 5)
+mask1 = x < 5
+print(mask1)
 
 # Show all values less than 5
 print(x[x < 5])
